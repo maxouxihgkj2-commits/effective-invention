@@ -1,0 +1,27 @@
+{
+  "name": "silent-smp",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "stripe": "^8.0.0",
+    "prisma": "^3.0.0",
+    "axios": "^0.21.1",
+    "framer-motion": "^4.1.17",
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4",
+    "eslint": "^7.32.0",
+    "prettier": "^2.4.1"
+  }
+}

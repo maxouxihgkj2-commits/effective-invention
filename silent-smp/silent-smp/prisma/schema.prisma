@@ -1,0 +1,28 @@
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  email     String   @unique
+  password  String
+  discordId String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Server {
+  id          Int      @id @default(autoincrement())
+  name        String
+  ownerId     Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  owner       User     @relation(fields: [ownerId], references: [id])
+}
+
+model Payment {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  amount    Float
+  status    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id])
+}

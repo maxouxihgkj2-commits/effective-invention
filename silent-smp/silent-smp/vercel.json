@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/pages/index.tsx",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "src/pages/api/**/*.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/src/pages/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/src/pages/$1"
+    }
+  ],
+  "env": {
+    "DISCORD_CLIENT_ID": "@discord-client-id",
+    "DISCORD_CLIENT_SECRET": "@discord-client-secret",
+    "STRIPE_SECRET_KEY": "@stripe-secret-key"
+  }
+}
